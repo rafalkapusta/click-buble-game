@@ -1,4 +1,5 @@
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -7,65 +8,93 @@
 body {
     background: #dff6fc;
     overflow: hidden;
+    font-family: 'Press Start 2P', sans-serif, cursive;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
 }
 
 .container {
-    width: 90vw;
-    height: 90vh;
+    width: 100vw;
+    height: 100vh;
     margin: 0 auto;
 }
 
 .game__menu {
-    width: 100%;
-    /*height: 90vh;*/
-    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
 }
 
-
+#start {
+    background: transparent;
+    border: none;
+    position: absolute;
+    font-size: 3.5rem;
+    font-family: 'Press Start 2P', sans-serif, cursive;
+    font-weight: bold;
+    color: #dff6fc;
+    z-index: 10;
+    left: 33px;
+    cursor: pointer;
+}
 
 .game__menu__score {
-    width: 15vw;
+    width: 35vw;
     height: 10vh;
-    border: 2px solid darkred;
-    border-bottom: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
     z-index: 15;
 }
 
+.game__menu__score span {
+    margin-left: 10px;
+}
+
 .game {
-    width: 100%;
     position: relative;
-    /*border: 2px solid darkred;*/
     z-index: 1;
 }
 
 
 .game__bubble {
-    /*width: 75px;
-    height: 75px;*/
-    border-radius:50%; /* making our border-radius half the width/height ensures a perfectly round circle */
+    border-radius:50%;
     position: absolute;
-    background:rgba(197,255,255,.4); /* makes our bubble slightly lighter in color than the background */
+    -webkit-box-shadow:inset 10px 10px 50px rgba(200,255,255,.6);
     box-shadow:inset 10px 10px 50px rgba(200,255,255,.6);
     opacity: 0.9;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
     z-index: 20;
+    -webkit-transition: left 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750), top 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750), opacity 1000ms;
+    -o-transition: left 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750), top 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750), opacity 1000ms;
+    transition: left 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750), top 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750), opacity 1000ms;
+    cursor: pointer;
 }
 
 .game__bubble--small {
-    width: 50px;
-    height: 50px;
+    width: 4.70rem;
+    height: 4.70rem;
 }
 
 .game__bubble--medium {
-    width: 100px;
-    height: 100px;
+    width: 6.25rem;
+    height: 6.25rem;
 }
 
 .game__bubble--big {
-    width: 150px;
-    height: 150px;
+    width: 9.375rem;
+    height: 9.375rem;
 }
 
 .game__bubble:before {
@@ -77,6 +106,7 @@ body {
     top:7.5%;
     left:7.5%;
     border-radius: 75% 25%;
+    -webkit-box-shadow:inset 10px 10px 50px rgba(255,255,255,.6);
     box-shadow:inset 10px 10px 50px rgba(255,255,255,.6);
 }
 
@@ -89,21 +119,64 @@ body {
     border-radius:100%;
     left:7.5%;
     top:7.5%;
+    -webkit-box-shadow:inset 0px -10px 10px rgba(0,0,0,.05);
     box-shadow:inset 0px -10px 10px rgba(0,0,0,.05);
 }
-@keyframes bubble_click {
+
+@-webkit-keyframes bubble_click {
     0% {
+        -webkit-transform: scale(1);
         transform: scale(1);
         opacity: 1;
     }
-    100% {
+    50% {
+        -webkit-transform: scale(0);
         transform: scale(0);
         opacity: 0;
     }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
-.game__bubble:active {
-    animation: bubble_click .4s backwards;
+@keyframes bubble_click {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.game__bubble:not(:active) {
+    -webkit-animation-name: bubble_click;
+    animation-name: bubble_click;
+    -webkit-animation-duration: .75s;
+    animation-duration: .75s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+@-webkit-keyframes animateCloud {
+    0% {
+        margin-left: -1000px
+    }
+    100% {
+        margin-left: 100%;
+    }
 }
 
 @keyframes animateCloud {
@@ -115,20 +188,15 @@ body {
     }
 }
 
-/*.clouds__container {*/
-/*    position: fixed;*/
-/*    height: 50vh;*/
-/*    width: 100%;*/
-/*}*/
-
 .cloud {
-    width: 350px;
-    height: 120px;
+    width: 21.875rem;
+    height: 7.5rem;
     background: #fff;
-    border-radius: 100px;
+    border-radius: 6.25rem;
     position: relative;
     z-index: 10;
     margin-top: 1rem;
+    -webkit-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
     box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -141,44 +209,58 @@ body {
 
 
 .cloud::before {
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 6.25rem;
     top: -50px;
     left: 50px;
 }
 
 .cloud::after {
-    border-radius: 100px;
-    width: 180px;
-    height: 180px;
+    border-radius: 6.25rem;
+    width: 11.25rem;
+    height: 11.25rem;
     right: 50px;
     top: -90px;
 }
 
-.cloud--type_a{
+.cloud--type_xs{
+    -webkit-animation: animateCloud 35s linear infinite;
     animation: animateCloud 35s linear infinite;
+    -webkit-transform: scale(.75);
+    -ms-transform: scale(.75);
     transform: scale(.75);
 }
 
-.cloud--type_b {
+.cloud--type_s {
+    -webkit-animation: animateCloud 25s linear infinite;
     animation: animateCloud 25s linear infinite;
+    -webkit-transform: scale(.5);
+    -ms-transform: scale(.5);
     transform: scale(.5);
 }
 
-.cloud--type_c {
+.cloud--type_m {
+    -webkit-animation: animateCloud 20s linear infinite;
     animation: animateCloud 20s linear infinite;
+    -webkit-transform: scale(.35);
+    -ms-transform: scale(.35);
     transform: scale(.35);
 }
 
-.cloud--type_d {
+.cloud--type_l {
+    -webkit-animation: animateCloud 17s linear infinite;
     animation: animateCloud 17s linear infinite;
+    -webkit-transform: scale(.25);
+    -ms-transform: scale(.25);
     transform: scale(.25);
 }
 
-.cloud--type_e {
+.cloud--type_xl {
+    -webkit-animation: animateCloud 28s linear infinite;
     animation: animateCloud 28s linear infinite;
+    -webkit-transform: scale(.65);
+    -ms-transform: scale(.65);
     transform: scale(.65);
 }
-
 
