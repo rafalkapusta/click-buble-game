@@ -1,0 +1,73 @@
+@import 'variables/variables';
+
+.game__bubble {
+  border-radius:50%;
+  position: absolute;
+  box-shadow:inset 10px 10px 50px rgba(200,255,255,.6);
+  opacity: 0.9;
+  transform-origin: 50% 50%;
+  z-index: 20;
+  transition: left 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750), top 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750), opacity 1000ms;
+  cursor: pointer;
+}
+
+.game__bubble--small {
+  width: 4.70rem;
+  height: 4.70rem;
+}
+
+.game__bubble--medium {
+  width: 6.25rem;
+  height: 6.25rem;
+}
+
+.game__bubble--big {
+  width: 9.375rem;
+  height: 9.375rem;
+}
+
+.game__bubble:before {
+  content:"";
+  display:block;
+  position:absolute;
+  width:50%;
+  height:50%;
+  top:7.5%;
+  left:7.5%;
+  border-radius: 75% 25%;
+  box-shadow:inset 10px 10px 50px rgba(255,255,255,.6);
+}
+
+.game__bubble:after {
+  content:"";
+  display:block;
+  position:absolute;
+  width:85%;
+  height:85%;
+  border-radius:100%;
+  left:7.5%;
+  top:7.5%;
+  box-shadow:inset 0px -10px 10px rgba(0,0,0,.05);
+}
+
+@keyframes bubble_click {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.game__bubble:not(:active) {
+  animation-name: bubble_click;
+  animation-duration: .75s;
+  animation-iteration-count: 1;
+}

@@ -5,12 +5,27 @@ let timeCounter = document.querySelector('.game__menu__score .time__counter');
 let start = document.querySelector('#start');
 let bubblesArray = [];
 let numOfBubbles = 10;
+//let playerName = document.querySelector('.playerName');
 
 // defining border of container which bubbles can't cross
-
 let width = gameContainer.offsetWidth;
 let height = gameContainer.offsetHeight;
 
+//Player name variables
+let playerNameInput = document.querySelector('#form__playerName--input');
+let addPlayerButton = document.querySelector('#form__playerName--btn--plus');
+let playerNameForm = document.querySelector('.form__playerName');
+let playerName = document.querySelector('.playerName');
+
+function localStorageCheck() {
+    if(localStorage.playerName) {
+        playerNameForm.style.display = "none";
+        playerName.style.display = "flex";
+        playerName.querySelector('p').innerText = localStorage.getItem('playerName');
+    }
+}
+
+localStorageCheck();
 // bubbles constructor function
 
 function Bubble(x,y){
@@ -165,6 +180,24 @@ function gameContainerClick(e) {
 
 //adding eventListener fo game container (- poits)
 gameContainer.addEventListener('click', gameContainerClick);
+
+//player name feature
+addPlayerButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    //console.log(playerNameInput.value);
+    saveToLocalStorage(playerNameInput.value);
+    playerNameInput.style.display = "none";
+    playerName.style.display = "flex";
+    playerName.querySelector('p').innerText = localStorage.getItem('playerName');
+});
+
+function saveToLocalStorage(name) {
+    if(localStorage.playerName == undefined && playerNameInput.value != '') {
+        localStorage.playerName = name;
+    }
+}
+
+
 
 
 

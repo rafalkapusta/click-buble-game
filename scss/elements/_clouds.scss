@@ -1,0 +1,70 @@
+@import 'variables/variables';
+
+@keyframes animateCloud {
+  0% {
+    margin-left: -1000px
+  }
+  100% {
+    margin-left: 100%;
+  }
+}
+
+.cloud {
+  width: 21.875rem;
+  height: 7.5rem;
+  background: $white;
+  border-radius: 6.25rem;
+  position: relative;
+  z-index: 10;
+  margin-top: 1rem;
+  box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cloud::before, .cloud::after {
+  content: '';
+  display: block;
+  background: $white;
+  position: absolute;
+}
+
+
+.cloud::before {
+  width: 6.25rem;
+  height: 6.25rem;
+  border-radius: 6.25rem;
+  top: -50px;
+  left: 50px;
+}
+
+.cloud::after {
+  border-radius: 6.25rem;
+  width: 11.25rem;
+  height: 11.25rem;
+  right: 50px;
+  top: -90px;
+}
+
+.cloud--type_xs{
+  animation: animateCloud 35s linear infinite;
+  transform: scale(.75);
+}
+
+.cloud--type_s {
+  animation: animateCloud 25s linear infinite;
+  transform: scale(.5);
+}
+
+.cloud--type_m {
+  animation: animateCloud 20s linear infinite;
+  transform: scale(.35);
+}
+
+.cloud--type_l {
+  animation: animateCloud 17s linear infinite;
+  transform: scale(.25);
+}
+
+.cloud--type_xl {
+  animation: animateCloud 28s linear infinite;
+  transform: scale(.65);
+}

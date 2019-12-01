@@ -1,0 +1,57 @@
+#form__playerName--btn--plus {
+  background: transparent;
+  border: none;
+  &::before {
+    @include fa-icon;
+    @extend .fas;
+    content: fa-content($fa-var-plus-square);
+    color: white;
+    font-size: 2em;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+#form__playerName--btn--arrow {
+  background: transparent;
+  border: none;
+  &::before {
+    @include fa-icon;
+    @extend .fas;
+    content: fa-content($fa-var-arrow-circle-down);
+    color: white;
+    font-size: 2em;
+    //margin-left: 10px;
+    margin-right: 20px;
+  }
+}
+
+.form__playerName {
+  display: flex;
+  align-items: center;
+}
+
+.form__playerName span {
+  width: 230px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.playerName {
+  display: none;
+  align-items: center;
+}
+
+#playerName--icon {
+  &::before {
+    @include fa-icon;
+    @extend .fas;
+    content: fa-content($fa-var-gamepad);
+    color: white;
+    font-size: 2em;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+

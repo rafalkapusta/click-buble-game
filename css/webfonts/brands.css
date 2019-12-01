@@ -1,0 +1,16 @@
+/*!
+ * Font Awesome Free 5.11.2 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+  src: url("./../webfonts/fa-brands-400.eot");
+  src: url("./../webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("./../webfonts/fa-brands-400.woff2") format("woff2"), url("./../webfonts/fa-brands-400.woff") format("woff"), url("./../webfonts/fa-brands-400.ttf") format("truetype"), url("./../webfonts/fa-brands-400.svg#fontawesome") format("svg"); }
+
+.fab {
+  font-family: 'Font Awesome 5 Brands'; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYmZvbnRzL2JyYW5kcy5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7OztFQUdFO0FBQ0Y7RUFDRSxvQ0FBb0M7RUFDcEMsa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsMkNBQTJDO0VBQzNDLDZUQUE2VCxFQUFFOztBQUVqVTtFQUNFLG9DQUFvQyxFQUFFIiwiZmlsZSI6IndlYmZvbnRzL2JyYW5kcy5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiFcbiAqIEZvbnQgQXdlc29tZSBGcmVlIDUuMTEuMiBieSBAZm9udGF3ZXNvbWUgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbVxuICogTGljZW5zZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tL2xpY2Vuc2UvZnJlZSAoSWNvbnM6IENDIEJZIDQuMCwgRm9udHM6IFNJTCBPRkwgMS4xLCBDb2RlOiBNSVQgTGljZW5zZSlcbiAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnRm9udCBBd2Vzb21lIDUgQnJhbmRzJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LXdlaWdodDogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IGF1dG87XG4gIHNyYzogdXJsKFwiLi8uLi93ZWJmb250cy9mYS1icmFuZHMtNDAwLmVvdFwiKTtcbiAgc3JjOiB1cmwoXCIuLy4uL3dlYmZvbnRzL2ZhLWJyYW5kcy00MDAuZW90PyNpZWZpeFwiKSBmb3JtYXQoXCJlbWJlZGRlZC1vcGVudHlwZVwiKSwgdXJsKFwiLi8uLi93ZWJmb250cy9mYS1icmFuZHMtNDAwLndvZmYyXCIpIGZvcm1hdChcIndvZmYyXCIpLCB1cmwoXCIuLy4uL3dlYmZvbnRzL2ZhLWJyYW5kcy00MDAud29mZlwiKSBmb3JtYXQoXCJ3b2ZmXCIpLCB1cmwoXCIuLy4uL3dlYmZvbnRzL2ZhLWJyYW5kcy00MDAudHRmXCIpIGZvcm1hdChcInRydWV0eXBlXCIpLCB1cmwoXCIuLy4uL3dlYmZvbnRzL2ZhLWJyYW5kcy00MDAuc3ZnI2ZvbnRhd2Vzb21lXCIpIGZvcm1hdChcInN2Z1wiKTsgfVxuXG4uZmFiIHtcbiAgZm9udC1mYW1pbHk6ICdGb250IEF3ZXNvbWUgNSBCcmFuZHMnOyB9XG4iXX0= */

@@ -1,0 +1,55 @@
+@import 'variables/variables';
+
+body {
+  background: $backgroundColor;
+  overflow: hidden;
+  font-family: 'Press Start 2P', sans-serif, cursive;
+  font-weight: bold;
+  color: $fontColor;
+  text-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.game__menu {
+  //margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.game__menu__score {
+  width: 35vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 15;
+}
+
+.game__menu__score div {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100%;
+}
+
+.game {
+  position: relative;
+  z-index: 1;
+}
+
+#start {
+  background: transparent;
+  border: none;
+  position: absolute;
+  font-size: 3.5rem;
+  font-family: 'Press Start 2P', sans-serif, cursive;
+  font-weight: bold;
+  color: $backgroundColor;
+  z-index: 10;
+  left: 33px;
+  cursor: pointer;
+}

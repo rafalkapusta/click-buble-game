@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>Click a bubble!</title>
 </head>
 <body>
     <div class="game__menu">
+        <form class="form__playerName">
+            <span>New Player :</span>
+            <input type="text" id="form__playerName--input">
+            <button type="submit" id="form__playerName--btn--plus"></button>
+            <span>Players List :</span>
+            <button type="submit" id="form__playerName--btn--arrow"></button>
+            <div class="playerName">
+                <p></p> <span id="playerName--icon"></span>
+            </div>
+        </form>
         <div class="game__menu__score">
-            <div>Score :
+            <div>Score:
                 <span class="score__counter">0</span>
             </div>
-            <div>Time :
+            <div>Time:
                 <span class="time__counter">0</span>
             </div>
         </div>
