@@ -2,16 +2,18 @@
 let gameContainer = document.querySelector('.container');
 let gameScore = document.querySelector('.game__menu__score .score__counter');
 let timeCounter = document.querySelector('.game__menu__score .time__counter');
+let gameMenu = document.querySelector('.game__menu');
+let FindButton = document.querySelector('.blinking');
 let start = document.querySelector('#start');
 let bubblesArray = [];
-let numOfBubbles = 10;
 //let playerName = document.querySelector('.playerName');
 
 // defining border of container which bubbles can't cross
 let width = gameContainer.offsetWidth;
 let height = gameContainer.offsetHeight;
 
-//Player name variables
+let numOfBubbles = Math.floor(width/150);
+/*//Player name variables
 let playerNameInput = document.querySelector('#form__playerName--input');
 let addPlayerButton = document.querySelector('#form__playerName--btn--plus');
 let playerNameForm = document.querySelector('.form__playerName');
@@ -25,7 +27,7 @@ function localStorageCheck() {
     }
 }
 
-localStorageCheck();
+localStorageCheck();*/
 // bubbles constructor function
 
 function Bubble(x,y){
@@ -105,16 +107,21 @@ createBubbles(bubbleCheck(width,height));
 let gameElements = document.querySelectorAll('.game__bubble');
 
 gameElements.forEach(function(elem) {
+   elem.style.visibility = 'hidden';
    elem.style.opacity = '0';
 });
 
 start.addEventListener('click', function (e) {
     gameElements.forEach(function(elem) {
+        elem.style.visibility = 'visible';
         elem.style.opacity = '1';
     });
     gameScore.innerText++;
     setInterval(timeCounterInterval,1000);
     start.style.visibility='hidden';
+    gameContainer.addEventListener('click', gameContainerClick);
+    FindButton.style.display = 'none';
+    gameMenu.style.justifyContent = 'flex-end';
 });
 
 //drawing bubbles initial color
@@ -140,7 +147,8 @@ function timeCounterInterval() {
 
     if (timeCounter.innerText === '60') {
         gameElements.forEach(function (element) {
-            element.removeEventListener('click', gameElementClick)
+            element.removeEventListener('click', gameElementClick);
+            element.style.opacity = '0';
         });
         gameContainer.removeEventListener('click', gameContainerClick);
         clearInterval(timeInterval);
@@ -179,9 +187,9 @@ function gameContainerClick(e) {
 }
 
 //adding eventListener fo game container (- poits)
-gameContainer.addEventListener('click', gameContainerClick);
+// gameContainer.addEventListener('click', gameContainerClick);
 
-//player name feature
+/*//player name feature
 addPlayerButton.addEventListener('click', function(e) {
     e.preventDefault();
     //console.log(playerNameInput.value);
@@ -195,7 +203,7 @@ function saveToLocalStorage(name) {
     if(localStorage.playerName == undefined && playerNameInput.value != '') {
         localStorage.playerName = name;
     }
-}
+}*/
 
 
 
