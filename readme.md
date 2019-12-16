@@ -16,3 +16,4 @@ Collect as many points as possible within 60 second.
 
 To run a game find and press start :)
 
+![Click bubble demo](clickBubble.gif)
