@@ -6,16 +6,14 @@ https://rafalkapusta.github.io/click-buble-game/
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-Game is about to click the bubbles. 
+Vanilla JS and Sass game. Rules are simple. 
 
-Big bubble is for 1 point
-Medium bubble is for 2 points
-Small bubble is for 3 points. 
+Click as many bubbles as you can within 60 seconds , but beware. 
 
-Missing bubble removes 1 point from score. 
+If you miss it will cost you 1 point from the score. 
 
-Collect as many points as possible within 60 second. 
+Big bubbles add 1 point, medium adds 2 points and small ones add 3 points. 
 
-To run a game find and press start :)
+And remember to find start button.
 
 ![Click bubble demo](clickBubble.gif)
